@@ -20,8 +20,8 @@ Este es un proyecto simple de una lista de tareas (To-Do List) creado con React 
 
 Antes de comenzar, asegúrate de tener instalado lo siguiente:
 
-- [Node.js](https://nodejs.org/) (v14 o superior)
-- [npm](https://www.npmjs.com/) o [yarn](https://yarnpkg.com/)
+- [Node.js](https://nodejs.org/) (v14 o superior) <img src="https://skillicons.dev/icons?i=node&perline=10" width="30" />
+- [npm](https://www.npmjs.com/) o [yarn](https://yarnpkg.com/) <img src="https://skillicons.dev/icons?i=npm&perline=10" width="30" />
 
 ## Instalación
 
