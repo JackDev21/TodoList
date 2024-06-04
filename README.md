@@ -50,9 +50,7 @@ npm install
 Para iniciar el servidor de desarrollo y ver la aplicación en tu navegador, ejecuta:
 
 ```bash
-npm run dev
-# o si prefieres usar yarn
-yarn dev
+npm start
 ```
 
 Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación.
