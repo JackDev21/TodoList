@@ -95,6 +95,7 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 ¡Gracias por utilizar esta lista de tareas! Si tienes alguna pregunta o sugerencia, no dudes en abrir un issue en el repositorio.
 
 ---
+### Colaboradores
 
 [![Web](https://img.shields.io/badge/GitHub-Jack-FFA500?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/JackDev21)
 
