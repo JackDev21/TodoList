@@ -30,13 +30,13 @@ Sigue estos pasos para configurar el proyecto localmente:
 1. **Clona el repositorio:**
 
 ```bash
-git clone https://github.com/tu-usuario/todo-list-react-vite.git
+git clone https://github.com/JackDev21/TodoList.git
 ```
 
 2. **Navega al directorio del proyecto:**
 
 ```bash
-cd todo-list-react-vite
+cd app
 ```
 
 3. **Instala las dependencias:**
