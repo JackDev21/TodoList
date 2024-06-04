@@ -1,0 +1,38 @@
+.TaskForm {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  color: dodgerblue;
+
+}
+
+.TaskForm>form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.TaskForm>form>input {
+  border-radius: 5px;
+  text-align: center;
+  width: 30rem;
+  height: 2rem;
+  color: dodgerblue;
+  font-size: 1.2rem;
+}
+
+.TaskForm>form>input::placeholder {
+  color: dodgerblue;
+}
+
+.TaskForm>form>button {
+  border-radius: 5px;
+  width: 10rem;
+  height: 2rem;
+  font-size: 1.2rem;
+  background-color: dodgerblue;
+  color: white;
+  cursor: pointer;
+}
