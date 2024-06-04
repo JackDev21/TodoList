@@ -85,7 +85,7 @@ Las contribuciones son bienvenidas. Si deseas contribuir, por favor sigue los si
 2. Crea una nueva rama (`git checkout -b feature/nueva-funcionalidad`).
 3. Realiza los cambios necesarios y haz commit (`git commit -m 'Agregar nueva funcionalidad'`).
 4. Haz push a la rama (`git push feature/nueva-funcionalidad`).
-5. Abre un Pull Request.
+5. Abre un Pull Request contra `develop` con la nueva feature.
 
 ## Licencia
 
