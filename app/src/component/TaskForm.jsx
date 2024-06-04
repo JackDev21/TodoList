@@ -11,7 +11,7 @@ function TaskForm(props) {
 	const checkForm = (event) => {
 		event.preventDefault();
 
-		const newTarea = {
+		const newTask = {
 			id: Date.now(),
 			description: inputValue,
 			completed: false,
@@ -19,7 +19,7 @@ function TaskForm(props) {
 
 		setInputValue("");
 
-		props.onSubmit(newTarea);
+		props.onSubmit(newTask);
 	};
 
 	return (

@@ -1,11 +1,15 @@
-.task-container completed{
+.task-container completed {
     background-color: greenyellow;
 }
 
-.task-container{
-background-color: red;
+.task-container {
+    background-color: red;
+    width: 20rem;
+    padding: 5px;
 }
 
-.task-tide{
-
+.task-text {
+    color: black;
+    width: 20rem;
+    padding: 5px;
 }
