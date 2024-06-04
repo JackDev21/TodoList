@@ -1,0 +1,7 @@
+.Header{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 40px;
+    color: dodgerblue;
+}
