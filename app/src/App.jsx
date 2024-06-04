@@ -1,19 +1,8 @@
-// import React, { Component } from 'react';
-import React from "react"
+import Header from "./component/Header.jsx";
+import TaskForm from "./component/TaskForm.jsx";
 
-import Header from './component/Header.jsx'
-
-function App(){
-    return(<Header />)
+function App() {
+	return [<Header key='header' />, <TaskForm key='taskForm' />];
 }
 
-export default App
-
-// class App extends Component{
-//     constructor(){
-//         super()
-//     }
-//     render(){
-//         return(<Header />)
-//     }
-// }
+export default App;
