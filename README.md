@@ -13,9 +13,8 @@ Este es un proyecto simple de una lista de tareas (To-Do List) creado con React 
 
 ## Tecnologías utilizadas
 
-- [React](https://reactjs.org/)  <img src="https://skillicons.dev/icons?i=react&perline=10 width="10" />
-
-- [Vite](https://vitejs.dev/) <img src="https://skillicons.dev/icons?i=vite&perline=10 width="10" />
+- [React](https://reactjs.org/) <img src="https://skillicons.dev/icons?i=react&perline=10" width="20" />
+- [Vite](https://vitejs.dev/) <img src="https://skillicons.dev/icons?i=vite&perline=10" width="20" />
 
 ## Requisitos previos
 
