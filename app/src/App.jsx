@@ -1,8 +1,8 @@
 import Header from "./component/Header.jsx";
-import TaskForm from "./component/TaskForm.jsx";
+import TaskList from "./component/TaskList.jsx"
 
 function App() {
-	return [<Header key='header' />, <TaskForm key='taskForm' />];
+	return [<Header key='header' />, <TaskList key='taskList' />];
 }
 
 export default App;
