@@ -1,6 +1,6 @@
 ---
 
-[todolist](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Icons8_flat_todo_list.svg/768px-Icons8_flat_todo_list.svg.png)
+![todolist](https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Icons8_flat_todo_list.svg/768px-Icons8_flat_todo_list.svg.png)
 
 # To-Do List con React y Vite  
 
