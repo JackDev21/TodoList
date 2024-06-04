@@ -1,6 +1,6 @@
 ---
 
-# To-Do List con React y Vite <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Icons8_flat_todo_list.svg/768px-Icons8_flat_todo_list.svg.png" alt="To-Do List Icon" width="50">
+# To-Do List con React y Vite <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Icons8_flat_todo_list.svg/768px-Icons8_flat_todo_list.svg.png" alt="To-Do List Icon" width="100">
 
 
 Este es un proyecto simple de una lista de tareas (To-Do List) creado con React y Vite. El objetivo de este proyecto es proporcionar una interfaz interactiva donde los usuarios puedan agregar, marcar como completadas y eliminar tareas.
