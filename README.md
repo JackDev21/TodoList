@@ -96,7 +96,7 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 
 ---
 ### Colaboradores
-
+---
 [![Web](https://img.shields.io/badge/GitHub-Jack-FFA500?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/JackDev21)
 
 [![Web](https://img.shields.io/badge/GitHub-Adrian-FFA500?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/AdrianGonzalo)
