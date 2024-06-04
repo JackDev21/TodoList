@@ -58,7 +58,7 @@ Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la 
 ## Estructura del proyecto
 
 ```plaintext
-todo-list-react-vite/
+app/
 ├── node_modules/
 ├── public/
 │   └── index.html
