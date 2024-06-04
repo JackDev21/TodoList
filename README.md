@@ -43,8 +43,6 @@ cd app
 
 ```bash
 npm install
-# o si prefieres usar yarn
-yarn install
 ```
 
 ## Uso
