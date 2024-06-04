@@ -73,7 +73,8 @@ app/
 ├── package.json
 ├── README.md
 ├── vite.config.js
-└── yarn.lock
+└── LICENSE
+
 ```
 
 ## Contribuir
