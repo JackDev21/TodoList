@@ -1,27 +1,94 @@
-.TaskList{
-    margin-top: 2rem;
-    width: 100%;
+.MainTask {
     display: flex;
-    /* list-style-type: none; */
-    justify-content: center;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
+    width: auto;
+    height: auto;
+    gap: 1rem;
+    border: 2px solid black;
+    border-radius: 15px;
+    padding: 0.5rem;
+    background-color: rgba(250, 235, 215, 0.541);
 }
 
-.TaskList>li{
-    padding: 1.2rem;
-    color: dodgerblue;
-    font-size: 1.2rem;
-    align-items: center;
+
+.TaskList {
+    display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+
+.TaskList>form {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.TaskList>form>input {
+    width: 40rem;
+    height: 3rem;
+    border-radius: 15px;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.685);
+}
+
+.TaskList>form>button {
+    cursor: pointer;
+    width: 10rem;
+    height: 3rem;
+    border-radius: 15px;
+}
+
+.TaskList>form>button:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+
+
+.TaskContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.TaskContainer>ul {
     display: flex;
     flex-direction: column;
-    width: 1400px;
-    height: auto;
-    border-radius:35px 35px 35px 35px;
-    -moz-border-radius:35px 35px 35px 35px;
-    -webkit-border-radius:35px 35px 35px 35px;
-    border: 3px solid yellowgreen;
-    background-color: rgba(0, 0, 0, 0.138);
+    align-items: center;
+    width: 50rem;
+    gap: 1rem;
+}
+
+.TaskContainer>ul>li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40rem;
+    height: 3rem;
+    gap: 1rem;
+    border: 2px solid black;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    background-color: rgb(255, 166, 0);
+}
+
+.TaskContainer>ul>li>p {
+    width: 100%;
+    text-align: center;
+}
+
+.TaskContainer>ul>li>span {
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: relative;
+
 }
