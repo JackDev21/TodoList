@@ -5,7 +5,7 @@ import "./TaskList.css"
 
 function TaskList() {
 	const [tasks, setTasks] = useState([])
-	const [task, setTask] = useState()
+	const [task, setTask] = useState("")
 
 	const handleInput = (event) => {
 		const target = event.target
@@ -21,6 +21,12 @@ function TaskList() {
 			setTasks([...tasks, task])
 			setTask("")
 		}
+	}
+
+	const handleDeleteTask = (indexToDelete) => {
+		const newTasks = [...tasks]
+		newTasks.splice(indexToDelete, 1)
+		setTasks(newTasks)
 	}
 
 	return (
@@ -41,7 +47,10 @@ function TaskList() {
 				<div className="TaskContainer">
 					<ul>
 						{tasks.map((task, index) => (
-							<li key={index}>{task}</li>
+							<li key={index}>
+								<p>{task}</p>
+								<span onClick={() => handleDeleteTask(index)}>❌</span>
+							</li>
 						))}
 					</ul>
 				</div>
