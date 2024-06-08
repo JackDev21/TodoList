@@ -7,7 +7,7 @@
     gap: 1rem;
     border: 2px solid black;
     border-radius: 15px;
-    padding: 0.5rem;
+    padding: 1.5rem;
     background-color: rgba(250, 235, 215, 0.541);
 }
 
@@ -81,9 +81,14 @@
     background-color: rgb(255, 166, 0);
 }
 
+.Completed {
+    text-decoration: line-through;
+}
+
 .TaskContainer>ul>li>p {
     width: 100%;
     text-align: center;
+    cursor: pointer;
 }
 
 .TaskContainer>ul>li>span {
