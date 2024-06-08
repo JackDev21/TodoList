@@ -1,44 +1,52 @@
-import { useState, useEffect } from "react";
-import TaskForm from "./TaskForm";
-import Task from "./Task"
+import { useState } from "react"
+// import TaskForm from "./TaskForm";
+// import Task from "./Task"
 import "./TaskList.css"
 
-
 function TaskList() {
-    const [tasks, setTasks] = useState([])
+	const [tasks, setTasks] = useState([])
+	const [task, setTask] = useState()
 
-    useEffect(() => {
-        const storeTask = localStorage.getItem(tasks)
+	const handleInput = (event) => {
+		const target = event.target
+		const input = target.value
 
-        if (storeTask) {
-            const parsedTasks = JSON.parse(storeTask)
-            setTasks(parsedTasks)
-        }
-    }, [])
+		setTask(input)
+	}
 
-    const addTask = ((task) => {
-        if (task.description.trim()) {
-            task.description = task.description.trim()
+	const handleSubmitTask = (event) => {
+		event.preventDefault()
 
-            const taskUpdate = [task, ...tasks]
+		if (task) {
+			setTasks([...tasks, task])
+			setTask("")
+		}
+	}
 
-            setTasks(taskUpdate)
+	return (
+		<>
+			<div className="MainTask">
+				<div className="TaskList">
+					<form onSubmit={handleSubmitTask}>
+						<input
+							type="text"
+							placeholder="Escribe una nueva tarea"
+							value={task}
+							onChange={handleInput}
+						></input>
+						<button type="submit">Añadir Tarea</button>
+					</form>
+				</div>
 
-            localStorage.setItem("tasks", JSON.stringify(taskUpdate))
-        }
-    })
-
-    return (
-        <div>
-            <TaskForm onSubmit={addTask} />
-            <ul className='TaskList' >
-                {tasks.map((task) => (
-                    <li key={task.id}> {/* Añadir una clave única para cada tarea */}
-                        {task.description}
-                    </li>
-                ))}
-            </ul>
-        </div>
-    )
+				<div className="TaskContainer">
+					<ul>
+						{tasks.map((task, index) => (
+							<li key={index}>{task}</li>
+						))}
+					</ul>
+				</div>
+			</div>
+		</>
+	)
 }
 export default TaskList
