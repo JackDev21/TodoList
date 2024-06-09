@@ -1,1 +1,6 @@
-[{"id":1,"name":"Learn React","completed":false},{"id":2,"name":"Learn Vite","completed":false},{"id":3,"name":"Learn Node","completed":false},{"id":"10","text":"Prueba"},{"id":11,"text":"Prueba"}]
+[
+	{ "text": "Tarea Prueba", "id": "9691749823042075-1717951418737" },
+	{ "text": "Tarea 2", "id": "8822678026350037-1717951589854" },
+	{ "text": "Tarea 3", "id": "49480507403849905-1717951598149" },
+	{ "text": "Lorena es tonta del to", "id": "9158222028142664-1717951606748" }
+]

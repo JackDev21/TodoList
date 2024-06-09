@@ -1,5 +1,7 @@
 import { useState } from "react"
 
+import logic from "../logic"
+
 import Title from "./Title"
 
 import "./Title.css"
@@ -16,10 +18,23 @@ function TaskList() {
 
 	const handleSubmitTask = (event) => {
 		event.preventDefault()
-		if (task.trim()) {
-			setTasks([...tasks, { text: task, completed: false }])
-			setTask("")
+
+		try {
+			logic.createTask(task, (error) => {
+				if (error) {
+					alert(error.meessage)
+
+					return
+				}
+				if (task.trim()) {
+					setTasks([...tasks, { text: task, completed: false }])
+				}
+			})
+		} catch (error) {
+			alert(error.message)
+			return
 		}
+		setTask("")
 	}
 
 	const handleDeleteTask = (indexToDelete) => {

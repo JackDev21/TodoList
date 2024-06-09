@@ -2,12 +2,10 @@ import fs from 'fs'
 
 const logic = {}
 
-const findTasks = (condition, callback) => {
+logic.findTasks = (condition, callback) => {
     fs.readFile('../api/data/tasks.json', 'utf-8', (error, tasksJson) => {
         if (error) {
             console.log(error)
-
-            //alert('Error al leer el archivo')
 
             return
         }
@@ -26,10 +24,10 @@ const findTasks = (condition, callback) => {
 
 }
 
-const createTask = (id, text, callback) => {
+logic.createTask = (text, callback) => {
     const task = {
-        id: id,
-        text: text
+
+        text: text,
     }
 
     const insertTask = (task, callback) => {
@@ -45,6 +43,8 @@ const createTask = (id, text, callback) => {
             }
             const tasks = JSON.parse(tasksJson)
 
+            task.id = `${Math.random().toString().slice(2)}-${Date.now()}`
+
             tasks.push(task)
 
             const jsonTasks = JSON.stringify(tasks)
@@ -59,13 +59,9 @@ const createTask = (id, text, callback) => {
                 callback(null)
             })
         })
-
-
-
     }
     insertTask(task, callback);
 }
 
 
-//export default findTasks
-export default createTask
+export default logic
