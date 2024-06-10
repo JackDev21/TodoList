@@ -1,18 +1,18 @@
 import logic from "./logic.js"
-// try {
-//     logic.findTasks(() => true, (error, tasks) => {
-//         if (error) {
-//             console.log(error)
+try {
+  logic.findTasks(() => true, (error, tasks) => {
+    if (error) {
+      console.log(error)
 
-//         }
+    }
 
-//         console.log(tasks)
+    console.log(tasks)
 
-//     })
-// } catch (error) {
+  })
+} catch (error) {
 
-//     console.log(error)
-// }
+  console.log(error)
+}
 
 
 
