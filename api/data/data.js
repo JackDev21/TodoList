@@ -1,13 +1,15 @@
 import fs from "fs"
 
+
 const data = {}
 
 data.findTasks = (condition, callback) => {
 
-  fs.readFile('../api/data/tasks.json', 'utf-8', (error, tasksJson) => {
+  fs.readFile('./data/tasks.json', 'utf-8', (error, tasksJson) => {
     if (error) {
+
       console.log(error)
-      callback(error)
+      callback(error.message)
       return
     }
 
@@ -25,7 +27,7 @@ data.findTasks = (condition, callback) => {
 
 
 data.insertTask = (task, callback) => {
-  fs.readFile('../api/data/tasks.json', 'utf-8', (error, tasksJson) => {
+  fs.readFile('./data/tasks.json', 'utf-8', (error, tasksJson) => {
     if (error) {
       console.log(error)
 
@@ -43,7 +45,7 @@ data.insertTask = (task, callback) => {
 
     const jsonTasks = JSON.stringify(tasks)
 
-    fs.writeFile('../api/data/tasks.json', jsonTasks, (error) => {
+    fs.writeFile('./data/tasks.json', jsonTasks, (error) => {
       if (error) {
         console.log(error)
 
@@ -53,7 +55,59 @@ data.insertTask = (task, callback) => {
       callback(null)
     })
   })
+}
 
+data.findOneTask = (condition, callback) => {
+  fs.readFile("./data/tasks.json", "utf-8", (error, tasksJson) => {
+    if (error) {
+      callback(new Error(error))
+
+      return
+    }
+
+    if (!tasksJson) {
+      tasksJson = "[]"
+    }
+
+    const tasks = JSON.parse(tasksJson)
+    const taskFind = tasks.find(condition)
+
+    callback(null, taskFind)
+  })
+}
+
+
+data.deleteTask = (condition, callback) => {
+
+  fs.readFile("./data/tasks.json", "utf8", (error, tasksJson) => {
+    if (error) {
+      callback(new Error(error.message))
+      return
+    }
+
+    if (!tasksJson) {
+      tasksJson = "[]"
+    }
+    const tasks = JSON.parse(tasksJson)
+
+    const index = tasks.findIndex(condition)
+
+    if (index > -1) {
+      const deletedTask = tasks.splice(index, 1)[0]
+      const newJson = JSON.stringify(tasks)
+
+      fs.writeFile("./data/tasks.json", newJson, (error) => {
+        if (error) {
+          callback(new Error(error.message))
+          return
+        }
+
+        callback(null, deletedTask)
+      })
+    } else {
+      callback(null)
+    }
+  })
 }
 
 export default data

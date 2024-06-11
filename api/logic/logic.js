@@ -21,7 +21,7 @@ logic.createTask = (text, callback) => {
         text: text,
     }
 
-    data.insertTask(task, (error) => {
+    data.insertTask(task, error => {
 
         if (error) {
             callback(error)
@@ -29,7 +29,29 @@ logic.createTask = (text, callback) => {
         }
 
         callback(null)
+    })
+}
 
+logic.deleteTask = (taskId, callback) => {
+
+    data.findOneTask(task => task.id === taskId, (error, task) => {
+        if (error) {
+            callback(error)
+            return
+        }
+
+        if (!task) {
+            callback(console.error(error.message))
+        }
+
+        data.deleteTask(task => task.id === taskId, (error) => {
+            if (error) {
+                callback(error)
+                return
+            }
+
+            callback(null)
+        })
     })
 }
 

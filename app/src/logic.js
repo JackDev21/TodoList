@@ -1,7 +1,7 @@
 const logic = {}
 
 logic.createTask = (text, callback) => {
-  const xhr = new XMLHttpRequest()
+  const xhr = new XMLHttpRequest
 
   xhr.onload = () => {
 
@@ -12,19 +12,64 @@ logic.createTask = (text, callback) => {
       return
     }
 
-    const { error, message } = JSON.parse(xhr.responseText)
+    const { error, message } = JSON.parse(xhr.response)
 
     callback({ error, message })
   }
 
-  xhr.open("POST", "http://localhost:3000/tasks")
 
-  const body = { text }
-
+  const body = {
+    text: text
+  }
   const json = JSON.stringify(body)
 
+
+  xhr.open("POST", "http://localhost:3001/tasks")
   xhr.setRequestHeader("Content-Type", "application/json")
   xhr.send(json)
+}
+
+
+logic.getAllTasks = (callback) => {
+
+  const xhr = new XMLHttpRequest
+
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      const tasks = JSON.parse(xhr.response)
+
+      callback(null, tasks)
+      console.log("Tasks loaded")
+      return
+    }
+
+    const { error, message } = JSON.parse(xhr.response)
+
+    callback({ error, message })
+  }
+
+  xhr.open("GET", "http://localhost:3001/tasks")
+  xhr.send()
+}
+
+logic.deleteTask = (taskId, callback) => {
+
+  const xhr = new XMLHttpRequest
+
+  xhr.onload = () => {
+    if (xhr.status === (204)) {
+      callback(null)
+      return
+    }
+
+    const { error, message } = JSON.parse(xhr.response)
+
+    callback({ error, message })
+  }
+
+  xhr.open("DELETE", `http://localhost:3001/tasks/${taskId}`)
+  xhr.send()
+
 }
 
 export default logic

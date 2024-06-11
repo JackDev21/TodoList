@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import logic from "../logic"
 
@@ -37,10 +37,40 @@ function TaskList() {
 		setTask("")
 	}
 
-	const handleDeleteTask = (indexToDelete) => {
-		const taskUpdated = [...tasks]
-		taskUpdated.splice(indexToDelete, 1)
-		setTasks(taskUpdated)
+	useEffect(() => {
+		try {
+			logic.getAllTasks((error, tasks) => {
+				if (error) {
+					console.error(error)
+					alert(error.message)
+					return
+				}
+
+				setTasks(tasks)
+			})
+		} catch (error) {
+			if (error) {
+				console.error(error)
+				alert(error.message)
+			}
+		}
+	}, [])
+
+	const handleDeleteTask = (indexToDelete, taskId) => {
+		try {
+			logic.deleteTask(taskId, (error) => {
+				if (error) {
+					console.error(error)
+					alert(error.message)
+				}
+				const taskUpdated = [...tasks]
+				taskUpdated.splice(indexToDelete, 1)
+				setTasks(taskUpdated)
+			})
+		} catch (error) {
+			console.error(error)
+			alert(error.message)
+		}
 	}
 
 	const handleTaskCompleted = (indexToComplete) => {
@@ -67,7 +97,7 @@ function TaskList() {
 								<p onClick={() => handleTaskCompleted(index)} className={task.completed ? "Completed" : ""}>
 									{task.text}
 								</p>
-								<span onClick={() => handleDeleteTask(index)}>❌</span>
+								<span onClick={() => handleDeleteTask(index, task.id)}>❌</span>
 							</li>
 						))}
 					</ul>
