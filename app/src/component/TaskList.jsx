@@ -29,6 +29,7 @@ function TaskList() {
 				if (task.trim()) {
 					setTasks([...tasks, { text: task, completed: false }])
 				}
+				loadTasks()
 			})
 		} catch (error) {
 			alert(error.message)
@@ -38,6 +39,10 @@ function TaskList() {
 	}
 
 	useEffect(() => {
+		loadTasks()
+	}, [])
+
+	const loadTasks = () => {
 		try {
 			logic.getAllTasks((error, tasks) => {
 				if (error) {
@@ -54,7 +59,7 @@ function TaskList() {
 				alert(error.message)
 			}
 		}
-	}, [])
+	}
 
 	const handleDeleteTask = (indexToDelete, taskId) => {
 		try {
@@ -85,7 +90,7 @@ function TaskList() {
 			<div className="MainTask">
 				<div className="TaskList">
 					<form onSubmit={handleSubmitTask}>
-						<input type="text" placeholder="Escribe una nueva tarea" value={task} onChange={handleInput} />
+						<input type="text" placeholder="Escribe una nueva tarea" value={task} onChange={handleInput} required />
 						<button type="submit">Añadir Tarea</button>
 					</form>
 				</div>
@@ -93,7 +98,7 @@ function TaskList() {
 				<div className="TaskContainer">
 					<ul>
 						{tasks.map((task, index) => (
-							<li key={index}>
+							<li key={index} className={task.completed ? "Completed" : ""}>
 								<p onClick={() => handleTaskCompleted(index)} className={task.completed ? "Completed" : ""}>
 									{task.text}
 								</p>
