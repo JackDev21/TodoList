@@ -1,8 +1,9 @@
 .Title {
-    width: 100%;
     display: flex;
     justify-content: center;
     font-size: 4rem;
-    color: dodgerblue;
+    color: #ad9e95;
     margin-bottom: 3rem;
+    flex-shrink: 1;
+
 }
