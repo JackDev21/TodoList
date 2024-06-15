@@ -61,29 +61,21 @@ logic.getAllTasks = (callback) => {
 
 logic.deleteTask = (taskId, callback) => {
 
-  const confirmDelete = confirm("¿Estas seguro de querer borrar esta tarea?")
+  const xhr = new XMLHttpRequest
 
-  if (!confirmDelete) {
-    return
-  } else {
-
-    const xhr = new XMLHttpRequest
-
-    xhr.onload = () => {
-      if (xhr.status === (204)) {
-        callback(null)
-        return
-      }
-
-      const { error, message } = JSON.parse(xhr.response)
-
-      callback({ error, message })
+  xhr.onload = () => {
+    if (xhr.status === (204)) {
+      callback(null)
+      return
     }
 
-    xhr.open("DELETE", `http://localhost:3001/tasks/${taskId}`)
-    xhr.send()
+    const { error, message } = JSON.parse(xhr.response)
+
+    callback({ error, message })
   }
 
+  xhr.open("DELETE", `http://localhost:3001/tasks/${taskId}`)
+  xhr.send()
 }
 
 export default logic
