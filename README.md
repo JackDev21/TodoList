@@ -31,7 +31,7 @@ Sigue estos pasos para configurar el proyecto localmente:
 1. **Clona el repositorio:**
 
 ```bash
-git clone https://github.com/JackDev21/TodoList.git
+git clone (https://github.com/USERNAME/TodoList.git)
 ```
 
 2. **Navega al directorio del proyecto:**
