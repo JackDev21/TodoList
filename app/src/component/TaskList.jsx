@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import logic from "../logic"
 
 import Title from "./Title"
+import ConfirmDelete from "./ConfirmDelete"
 
 import "./Title.css"
 import "./TaskList.css"
@@ -10,6 +11,11 @@ import "./TaskList.css"
 function TaskList() {
 	const [tasks, setTasks] = useState([])
 	const [task, setTask] = useState("")
+
+	const [showConfirmDelete, setShowConfirmDelete] = useState(false)
+
+	const [taskIdToDelete, setTaskIdToDelete] = useState(null)
+	const [indexToDelete, setIndexToDelete] = useState(null)
 
 	const handleInput = (event) => {
 		const input = event.target.value
@@ -22,7 +28,7 @@ function TaskList() {
 		try {
 			logic.createTask(task, (error) => {
 				if (error) {
-					alert(error.meessage)
+					alert(error.message)
 
 					return
 				}
@@ -61,9 +67,9 @@ function TaskList() {
 		}
 	}
 
-	const handleDeleteTask = (indexToDelete, taskId) => {
+	const confirmDelete = () => {
 		try {
-			logic.deleteTask(taskId, (error) => {
+			logic.deleteTask(taskIdToDelete, (error) => {
 				if (error) {
 					console.error(error)
 					alert(error.message)
@@ -76,12 +82,23 @@ function TaskList() {
 			console.error(error)
 			alert(error.message)
 		}
+		setShowConfirmDelete(false)
+	}
+
+	const cancelDelete = () => {
+		setShowConfirmDelete(false)
 	}
 
 	const handleTaskCompleted = (indexToComplete) => {
 		const taskUpdated = [...tasks]
 		taskUpdated[indexToComplete].completed = !taskUpdated[indexToComplete].completed
 		setTasks(taskUpdated)
+	}
+
+	const handleDeletePost = (index, taskId) => {
+		setShowConfirmDelete(true)
+		setTaskIdToDelete(taskId)
+		setIndexToDelete(index)
 	}
 
 	return (
@@ -102,10 +119,11 @@ function TaskList() {
 								<p onClick={() => handleTaskCompleted(index)} className={task.completed ? "Completed" : ""}>
 									{task.text}
 								</p>
-								<span onClick={() => handleDeleteTask(index, task.id)}>❌</span>
+								<span onClick={() => handleDeletePost(index, task.id)}>❌</span>
 							</li>
 						))}
 					</ul>
+					{showConfirmDelete && <ConfirmDelete onConfirmDelete={confirmDelete} onCancelDelete={cancelDelete} />}
 				</div>
 			</div>
 		</>
