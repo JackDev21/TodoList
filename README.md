@@ -127,5 +127,3 @@ Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE)
 [![Web](https://img.shields.io/badge/GitHub-Jose-FFA500?style=for-the-badge&logo=github&logoColor=white&labelColor=101010)](https://github.com/j0sep0z0)
 
 ---
-
-De esta manera, el README ahora incluye la información sobre la API, su estructura y un ejemplo de cómo manejar las solicitudes `GET`, `POST` y `DELETE`.
