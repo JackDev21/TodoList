@@ -1,9 +1,15 @@
 .Title {
     display: flex;
     justify-content: center;
-    font-size: 4rem;
+    font-size: 2rem;
     color: #ad9e95;
     margin-bottom: 3rem;
     flex-shrink: 1;
+}
+
+.Title h1:hover {
+    color: tomato;
+    cursor: pointer;
+    transition: 0.5s ease;
 
 }

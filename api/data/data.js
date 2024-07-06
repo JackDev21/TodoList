@@ -1,6 +1,5 @@
 import fs from "fs"
 
-
 const data = {}
 
 data.findTasks = (condition, callback) => {
