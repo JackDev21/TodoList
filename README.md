@@ -1,5 +1,3 @@
-Claro, aquí está el README actualizado con la información sobre la API, sus carpetas `data` y `logic`, y el archivo `index.js` para manejar las solicitudes `GET`, `POST` y `DELETE`.
-
 ---
 
 # To-Do List con React <img src="https://skillicons.dev/icons?i=react&perline=14" /> y Vite <img src="https://skillicons.dev/icons?i=vite&perline=14" /> <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Icons8_flat_todo_list.svg/768px-Icons8_flat_todo_list.svg.png" alt="To-Do List Icon" width="100">
